@@ -1,0 +1,9 @@
+For the user_history file, I used the DLB base object, with a few modifications from ArrayList. I read in the words from user_history.txt (if of course the file existed)
+directly into an ArrayList. I then sorted the ArrayList, and read it back into user_history.txt. This ensures creating a tree with words that always place their ending char, 
+"^", into the child node, and never into the next node. This saves time when searching for words later on. So the newly sorted user_history is then read directly
+into a DLB, and the insert and search operations can apply from there. Any time a new word is introduced to the history, the word is added to the Arraylist containing all
+prior history, and sorted again. The DLB is then recreated so that it is "balanced". At the conclusion of the session, the sorted words are finally added back into
+user_history from the ArrayList.
+ArrayList operations used:
+.add(): O(n), https://docs.oracle.com/javase/6/docs/api/java/util/ArrayList.html
+Collection.sort(): O(n*log(n)) https://docs.oracle.com/javase/6/docs/api/java/util/Collections.html#sort%28java.util.List%29

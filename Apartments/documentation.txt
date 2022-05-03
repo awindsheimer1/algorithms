@@ -1,0 +1,38 @@
+The first thing this program does is read in lines from apartments.txt. Then, one by one, it breaks them down based on their separator, ":", and creates Apartment objects. 
+Immediately upon creation, these Apartment objects are inserted into four enveloping data structures. Consider them in two pairs, as follows:
+THE PRIORITY QUEUES
+minRent: This is a minPQ that prioritizes the min rent of the Apartments. It considers every one from input at once, regardless of city. 
+maxSQFT: This is a maxPQ that prioritizes the max square footage of the Apartments. It also considers every one from input at once, regardless of city. 
+
+THE HASHMAPS
+cityMin: Maps each unique city to a minPQ that prioritizes the min rent of the Apartments that reside within the given city. 
+cityMax: Maps each unique city to a max PQ that prioritizes the max square footage of the Apartments that reside within the given city. 
+
+The PQs are all heap backed and use indirection. The heap is a balanced tree, collapsed into an array for simplicity.Notably, they complete the following 
+operations in O(logN) time in the worst case, where N is the total number of Apartments created: update, removal, and retrieve. This is possible because 
+Java's built-in HashMap from JDK 8 onward uses balanced trees at each bucket in the hash, where previously it had used linked lists in its implementation of 
+separate chaining. Searching of balanced trees can always be done in O(logN) time, in the worse case, since a given node can be found at worst in a leaf node, 
+logN nodes/levels away from the root. This certainly contrasts with the LinkedList, which in the sorted or unsorted variety can take upwards of O(N) time to 
+search in the worst case. This trait is discussed in detail at this link:
+http://hg.openjdk.java.net/jdk8u/jdk8u/jdk/file/a006fa0a9e8f/src/share/classes/java/util/HashMap.java#l143
+
+Retrieval occurs in a PQ is done in the following manner. The user enters in three uniquely defining attributes of an Apartment object, which is found via 
+a Hashmap, "strings", which mapped the toString() outputs of each object to the object itself, in no worse than logN time as discussed above. Then, we can find the 
+position of the object within PQ itself using another Hashmap, "indices", which returns the index within the heap of the given Apartment. 
+
+If an update occurs, the value inside the helper array, keys, is then updated, and then the heap itself is adjusted making no more than logN comparisons as 
+the object's priority places it appropriately within the heap. Both increases and decreases in priority are considered, but only one can happen for any given 
+object, or perhaps neither, if the priority remains unchanged after the update in value. The balanced tree-backed nature of the Java Hashmap therefore can 
+guarantee O(logN) performance for update.
+
+Removals act in a similar manner to update. After the user enters in attributes, the Hashmap "string" returns the connected Apartment object. The object
+is then found in each of its corresponding PQs and related HashMaps, and deleted. Each of these operations take O(logN) in the worst case. Any array-backed
+heap would take at worst logN comparisons to swap from the bottom of the heap to the top, or the number of levels in the balanced tree the heap is mirrored 
+after. 
+
+Locating a given object within cityMin/Max takes one additional step beyond what it would take within minRent/maxSQFT. This step is finding the 
+corresponding city-specific PQ, which takes no more than O(logN) time within the Hashmap, and so it follows that any operation within these structures still
+takes O(logN) in the worst case.
+
+So indeed, any of the array (heap) and Hashmap operations named above occur within some constant multiple of O(logN) time.
+

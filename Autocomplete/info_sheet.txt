@@ -1,0 +1,34 @@
+========================================
+CS/COE 1501 Assignment Information Sheet
+----------------------------------------
+
+You must submit an information sheet with every assignment.  Also be sure
+to submit all materials following the procedures described on the
+submission procedures page.
+
+Name: Andrew Windsheimer
+
+Lecture section:  1270, or TH1450
+
+Recitation day and time:  Wed 3:25
+
+Assignment #: 1
+
+Program due date: 9/16/20, 11:59 PM
+
+Handed in date:  9/16/20
+
+Source code file name(s):
+
+ac_test.java
+
+Other file name(s) (if relevant):
+
+approach.txt
+
+Does your program run without error?: YES
+
+If not, what is/are the error(s) and which parts of your program run
+correctly?: N/A
+
+Additional comments to the grader: N/A

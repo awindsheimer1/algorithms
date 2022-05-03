@@ -1,0 +1,17 @@
+Notes: All sizes listed are in KB. All ratios are calculated to be Orig Size / Compressed Size. N is MyLZW's normal mode, R is reset mode, M is monitor mode.
+
+File Name		OrigSizeLZWSize	LZWRatio  NSize	NRatio	RSize	RRatio	MSize	MRatio	7ZipSize7ZipRatio
+all.tar			2960	1804	1.64	  1751	1.69	1151	2.57	3149	0.94	810	3.65
+assig2.doc		85	73	1.16	  40	2.13	40	2.13	40	2.13	21	4.05
+bmps.tar		1080	904	1.19	  80	13.50	80	13.50	80	13.50	53	20.38
+code2.txt		57	24	2.38	  21	2.71	21	2.71	21	2.71	13	4.38
+code.txt		71	31	2.29	  24	2.96	24	2.96	24	2.96	14	5.07
+edit.exe		231	245	0.94	  153	1.51	149	1.55	153	1.51	96	2.41
+frosty.jpg		124	174	0.71	  160	0.78	168	0.74	160	0.78	124	1.00
+gone_fishing.bmp	17	10	1.70	  9	1.89	9	1.89	9	1.89	8	2.13
+large.txt		1193	591	2.02	  491	2.43	516	2.31	491	2.43	394	3.03
+Lego-big.gif		92	126	0.73	  120	0.77	120	0.77	120	0.77	91	1.01
+medium.txt		25	13	1.92	  13	1.92	13	1.92	13	1.92	11	2.27
+texts.tar		1350	989	1.37	  584	2.31	577	2.34	584	2.31	427	3.16
+wacky.bmp		901	5	180.20	  4	225.25	4	225.25	4	225.25	3	300.33
+winnt256.bmp		154	156	0.99	  62	2.48	62	2.48	62	2.48	43	3.58
